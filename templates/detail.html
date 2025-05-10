@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="house-detail">
+  <h1>{{ house.title }}</h1>
+  <img src="{{ house.image_url }}" alt="House image" class="responsive-img">
+  <p>{{ house.description }}</p>
+  <a href="/">← Back to map</a>
+</div>
+{% endblock %}

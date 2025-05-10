@@ -1,0 +1,46 @@
+{% raw %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{% block title %}Housing App{% endblock %}</title>
+  <!-- Favicon -->
+  <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header class="site-header">
+    <nav class="nav">
+      <a class="nav__logo" href="{{ url_for('home') }}">🏠 MyHousing</a>
+      <ul class="nav__links">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('swipe') }}">Swipe Roommates</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="site-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; {{ current_year }} MyHousing App</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="{{ url_for('static', filename='js/map.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/swipe.js') }}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>
+{% endraw %}

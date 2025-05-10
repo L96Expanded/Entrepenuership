@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id="map" style="height: 100vh;"></div>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+  const map = L.map('map').setView([40.4168, -3.7038], 13);  // Madrid center
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+  const houses = {{ houses|tojson }};
+  houses.forEach(h => {
+    L.marker([h.lat, h.lng])
+      .addTo(map)
+      .bindPopup(`<a href="/house/${h.id}">${h.title}</a>`);
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,13 @@
+flask>=2.0
+flask-SQLAlchemy>=2.5
+gunicorn>=20.0
+SQLAlchemy>=1.4
+itsdangerous>=2.0
+Jinja2>=3.0
+Werkzeug>=2.0
+leaflet>=1.9.4
+# for front-end mapping
+leaflet.markercluster>=1.4
+Swiper>=8.0
+psycopg2-binary>=2.9  # if using PostgreSQL
+python-dotenv>=0.19  # for loading .env files
